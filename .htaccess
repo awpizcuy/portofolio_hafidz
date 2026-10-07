@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Redirect / forward root request to dist folder (built React app)
+RewriteCond %{REQUEST_URI} !^/portofolio_hafidz/dist/
+RewriteRule ^(.*)$ dist/$1 [L]
+</IfModule>
