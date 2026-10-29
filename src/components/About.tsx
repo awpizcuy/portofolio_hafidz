@@ -1,29 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Briefcase, FolderGit2, Users } from 'lucide-react';
 import '../styles/About.css';
 
 const About: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const stats = [
-    {
-      icon: <Briefcase className="stat-icon" />,
-      value: "2+",
-      label: "Years Experience"
-    },
-    {
-      icon: <FolderGit2 className="stat-icon" />,
-      value: "10+",
-      label: "Projects Completed"
-    },
-    {
-      icon: <Users className="stat-icon" />,
-      value: "5+",
-      label: "Happy Clients"
-    }
-  ];
 
   return (
     <section id="about" className="about-section">
@@ -47,7 +28,12 @@ const About: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="about-image">
-              <div className="image-placeholder"></div>
+              <img 
+                src="/profile.jpg" 
+                alt="Hafidz Fadilah" 
+                className="about-img" 
+                loading="lazy"
+              />
             </div>
           </motion.div>
 
@@ -58,23 +44,11 @@ const About: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <p className="about-description">
-              Hello! I'm a passionate developer who loves building digital experiences. My journey in web development started a few years ago, and since then, I've been continuously learning and exploring new technologies.
+              I am an Information Systems graduate from Telkom University (GPA 3.33/4.00) with hands-on experience as an IT Business Solutions Intern at PT Pertamina Hulu Indonesia. During my internship, I specialized in building interactive Metabase analytics dashboards and integrating enterprise AI Chatbot services.
             </p>
             <p className="about-description">
-              I specialize in creating modern, responsive, and user-friendly interfaces using React and TypeScript. I believe in writing clean, maintainable code and always strive to deliver the best possible solution for any given problem.
+              As a BNSP-certified National Web Developer, I specialize in full-stack web and mobile development using Laravel, React, and React Native. I believe in writing clean, maintainable code, solving real-world problems, and constantly striving to deliver reliable digital solutions—whether in Software Engineering or Quality Assurance roles.
             </p>
-
-            <div className="about-stats">
-              {stats.map((stat, index) => (
-                <div key={index} className="stat-card">
-                  {stat.icon}
-                  <div className="stat-info">
-                    <h3 className="stat-value">{stat.value}</h3>
-                    <p className="stat-label">{stat.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>

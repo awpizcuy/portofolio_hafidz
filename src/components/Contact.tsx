@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './icons/SocialIcons';
+import { Mail, MapPin, Share2 } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, InstagramIcon } from './icons/SocialIcons';
 import '../styles/Contact.css';
 
 const Contact: React.FC = () => {
@@ -10,6 +10,7 @@ const Contact: React.FC = () => {
     email: '',
     message: ''
   });
+  const [isSent, setIsSent] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -18,10 +19,13 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log('Form submitted:', formData);
-    alert('Message sent successfully!');
-    setFormData({ name: '', email: '', message: '' });
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Hi Hafidz,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:hafidz.fadilah28@gmail.com?subject=${subject}&body=${body}`;
+    setIsSent(true);
+    setTimeout(() => setIsSent(false), 8000);
   };
 
   return (
@@ -52,7 +56,7 @@ const Contact: React.FC = () => {
               <Mail className="info-icon" />
               <div>
                 <h4>Email</h4>
-                <a href="mailto:hello@example.com">hello@example.com</a>
+                <a href="mailto:hafidz.fadilah28@gmail.com">hafidz.fadilah28@gmail.com</a>
               </div>
             </div>
             
@@ -65,9 +69,14 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="info-card">
-              <div className="social-links-contact">
-                <a href="#" aria-label="GitHub"><GithubIcon size={22} /></a>
-                <a href="#" aria-label="LinkedIn"><LinkedinIcon size={22} /></a>
+              <Share2 className="info-icon" />
+              <div>
+                <h4>Social Profiles</h4>
+                <div className="social-links-contact">
+                  <a href="https://github.com/awpizcuy" target="_blank" rel="noreferrer" aria-label="GitHub"><GithubIcon size={20} /></a>
+                  <a href="https://www.linkedin.com/in/hafidzfadilahtinardi/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
+                  <a href="https://www.instagram.com/hafidzfadilah_/" target="_blank" rel="noreferrer" aria-label="Instagram"><InstagramIcon size={20} /></a>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -119,6 +128,11 @@ const Contact: React.FC = () => {
               <button type="submit" className="submit-btn">
                 Send Message
               </button>
+              {isSent && (
+                <p className="form-feedback-notice">
+                  Opening your email client... If it doesn't open automatically, you can email directly to <a href="mailto:hafidz.fadilah28@gmail.com">hafidz.fadilah28@gmail.com</a>.
+                </p>
+              )}
             </form>
           </motion.div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon } from './icons/SocialIcons';
+import { ArrowUp, Mail } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, InstagramIcon } from './icons/SocialIcons';
 import '../styles/Footer.css';
 
 const Footer: React.FC = () => {
@@ -36,10 +36,10 @@ const Footer: React.FC = () => {
           <div className="footer-social">
             <h4>Connect</h4>
             <div className="social-icons">
-              <a href="#" aria-label="GitHub"><GithubIcon size={20} /></a>
-              <a href="#" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
-              <a href="#" aria-label="Twitter"><TwitterIcon size={20} /></a>
-              <a href="#" aria-label="Instagram"><InstagramIcon size={20} /></a>
+              <a href="https://github.com/awpizcuy" target="_blank" rel="noreferrer" aria-label="GitHub"><GithubIcon size={20} /></a>
+              <a href="https://www.linkedin.com/in/hafidzfadilahtinardi/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedinIcon size={20} /></a>
+              <a href="https://www.instagram.com/hafidzfadilah_/" target="_blank" rel="noreferrer" aria-label="Instagram"><InstagramIcon size={20} /></a>
+              <a href="mailto:hafidz.fadilah28@gmail.com" aria-label="Email"><Mail size={20} /></a>
             </div>
           </div>
         </div>

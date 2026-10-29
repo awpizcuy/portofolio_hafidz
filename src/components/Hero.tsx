@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail } from 'lucide-react';
+import { Mail, Download } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from './icons/SocialIcons';
 import '../styles/Hero.css';
 
@@ -47,17 +47,25 @@ const Hero: React.FC = () => {
           </motion.h1>
           
           <motion.h2 variants={itemVariants} className="hero__subtitle">
-            Frontend Developer & UI/UX Enthusiast
+            Full-Stack Web & Mobile Developer
           </motion.h2>
           
           <motion.p variants={itemVariants} className="hero__description">
-            I craft responsive, accessible, and visually appealing web experiences. 
-            Passionate about modern web technologies and creating intuitive user interfaces that solve real-world problems.
+            I build scalable web and mobile applications with modern technologies like Laravel, React, and React Native. Experienced in database management, API integrations, and analytics solutions that solve real-world problems.
           </motion.p>
           
           <motion.div variants={itemVariants} className="hero__actions">
             <a href="#projects" className="hero__btn hero__btn--primary">
               View Projects
+            </a>
+            <a 
+              href="/cv-hafidz-fadilah.pdf" 
+              className="hero__btn hero__btn--cv"
+              target="_blank" 
+              rel="noreferrer"
+            >
+              <Download size={18} />
+              <span>Download CV</span>
             </a>
             <a href="#contact" className="hero__btn hero__btn--outline">
               Contact Me
@@ -65,16 +73,16 @@ const Hero: React.FC = () => {
           </motion.div>
           
           <motion.div variants={itemVariants} className="hero__socials">
-            <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <a href="https://github.com/awpizcuy" target="_blank" rel="noreferrer" aria-label="GitHub">
               <GithubIcon size={22} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/hafidzfadilahtinardi/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <LinkedinIcon size={22} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/hafidzfadilah_/" target="_blank" rel="noreferrer" aria-label="Instagram">
               <InstagramIcon size={22} />
             </a>
-            <a href="mailto:email@example.com" aria-label="Email">
+            <a href="mailto:hafidz.fadilah28@gmail.com" aria-label="Email">
               <Mail size={22} />
             </a>
           </motion.div>

@@ -5,6 +5,7 @@ import {
   Wrench, 
   Database,
   Globe,
+  Smartphone,
   CheckCircle2
 } from 'lucide-react';
 import '../styles/Skills.css';
@@ -15,24 +16,29 @@ const Skills: React.FC = () => {
 
   const categories = [
     {
-      title: "Frontend",
+      title: "Frontend Development",
       icon: <Globe className="category-icon" />,
-      skills: ["React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Framer Motion"]
+      skills: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "Bootstrap", "HTML5 & CSS3"]
     },
     {
-      title: "Backend",
+      title: "Backend Development",
       icon: <Terminal className="category-icon" />,
-      skills: ["Node.js", "Express", "REST APIs"]
+      skills: ["Laravel", "PHP", "Node.js", "Express", "RESTful APIs"]
     },
     {
-      title: "Database",
+      title: "Mobile Development",
+      icon: <Smartphone className="category-icon" />,
+      skills: ["Kotlin", "Android Studio", "Flutter", "Dart", "React Native"]
+    },
+    {
+      title: "Database & Analytics",
       icon: <Database className="category-icon" />,
-      skills: ["MongoDB", "PostgreSQL", "MySQL"]
+      skills: ["MySQL", "PostgreSQL", "Metabase"]
     },
     {
-      title: "Tools & Others",
+      title: "Tools & Workflow",
       icon: <Wrench className="category-icon" />,
-      skills: ["Git", "GitHub", "VS Code", "Figma", "Postman", "Vite"]
+      skills: ["Git", "GitHub", "Postman", "Vite", "Figma"]
     }
   ];
 
